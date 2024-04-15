@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container mt-5">
+    <form action="/newpost/submit" method="post">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" name="title" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="intro" class="form-label">Introduction</label>
+      <input type="text" name="intro" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="para" class="form-label">Paragraph</label>
+        <input type="text" name="para" class="form-control" >
+    </div>
+    <div class="mb-3">
+        <label for="conc" class="form-label">Conclusion</label>
+        <input type="text" name="conc" class="form-control" >
+    </div>  
+    
+    <button type="submit" class="btn btn-primary">POST!!!</button>
+  </form>
+
+</div>
+
+<%- include("partials/footer.ejs") %>

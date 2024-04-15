@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="https://img.freepik.com/free-vector/hand-drawn-essay-illustration_23-2150268421.jpg?t=st=1713094269~exp=1713097869~hmac=2e0759b22237013a2410bc6700a18eb205ceb7b9cceda00e70ba60a15dc3146e&w=740" alt="" height="100">
+    <h1 class="display-5 fw-bold text-body-emphasis">Vardan's Easy Blogging Platform</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Vardan's blog app makes sharing ideas easy. It's user-friendly with a sleek design, encouraging community interaction. You can post text, images, and videos effortlessly, creating a dynamic space for expression and connection online.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <form action="/newpost" method="get">
+            <button type="submit" class="btn btn-outline-secondary btn-lg px-4" >Post a New Blog</button>
+        </form>
+      </div>
+    </div>
+</div>
+<% if (locals.allPosts){ %> 
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% for (let i = 0; i<allPosts.length; i++) { %>
+                <% if (allPosts && allPosts[i] && allPosts[i].intro) { %>
+                    <div class="card text-center mb-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= allPosts[i]["title"]%></h5>
+                            <p class="card-text"><%= (allPosts[i]["intro"]) %></p>
+                            <form action="/article" method="POST">
+                                <input type="hidden" name="title" value="<%= allPosts[i].title %>">
+                                <button type="submit" class="btn btn-primary">Read More</button>
+                            </form>
+                        </div>
+                    </div>
+                <% } %>
+        </div>
+    <% } %>
+</div>
+<% } %>
+
+
+
+<%- include("partials/footer.ejs") %>

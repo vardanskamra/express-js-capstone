@@ -1,0 +1,11 @@
+{
+  "description": "",
+  "type": "module",
+  "author": {
+    "name": "Vardan S Kamra"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

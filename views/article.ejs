@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container mx=5 my-3">
+    <p class="fs-2 mb-1 mt-4"> <%= title%> </p>
+    <br/>
+    <p class="fs-6 my-1"> <%= intro%> </p>
+    <br/>
+    <p class="fs-6 my-1"> <%= para%> </p>
+    <br/>
+    <p class="fs-6 my-1"> <%= conc%> </p>
+</div>
+
+<div class="container mx=5 my-3">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <form action="article/edit" method="post">
+            <input type="hidden" name="title" value="<%= title%>">
+            <button class="btn btn-warning" type="submit">Edit Blog</button>
+        </form>
+        <form action="/article/delete" method="post">
+            <input type="hidden" name="title" value="<%= title%>">
+            <button class="btn btn-outline-danger" type="submit">Delete Blog</button>
+        </form>       
+      </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
